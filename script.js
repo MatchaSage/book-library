@@ -35,7 +35,7 @@ function displayBooks() {
         bookDiv.appendChild(readStatus);
         
         bookShelf[0].appendChild(bookDiv)
-        console.log(bookShelf)
+        console.log(bookShelf[0])
     })
 }
 
