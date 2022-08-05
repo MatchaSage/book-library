@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.book.cards {
+    display: flex;
+    border: 2px solid rebeccapurple;
+}
+
+.card {
+    border: 1px solid red;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.book.title {
+    font-weight: 600;
+
+}
