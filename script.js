@@ -1,6 +1,19 @@
 let bookShelf = document.querySelectorAll('div.book.cards');
-
+let bookButton = document.querySelectorAll('button.book.button');
+let bookForm = document.getElementById('add book');
 let bookArray = [];
+
+bookButton[0].addEventListener('click', function() {
+    if (bookForm.style.display != 'block') {
+        bookForm.style.display = 'block';
+        bookButton[0].textContent = 'hide';
+    }
+    
+    else {
+        bookForm.style.display = 'none';
+        bookButton[0].textContent = 'New Book';
+    }
+})
 
 function Books(title, author, pages, read) {
     this.title = title
@@ -35,10 +48,17 @@ function displayBooks() {
         bookDiv.appendChild(readStatus);
         
         bookShelf[0].appendChild(bookDiv)
-        console.log(bookShelf[0])
     })
 }
 
+storeBook('meme', 'dog', 250, 'read');
+storeBook('hella', 'kitten', 500,'unread');
+storeBook('meme', 'dog', 250, 'read');
+storeBook('hella', 'kitten', 500,'unread');
+storeBook('meme', 'dog', 250, 'read');
+storeBook('hella', 'kitten', 500,'unread');
+storeBook('meme', 'dog', 250, 'read');
+storeBook('hella', 'kitten', 500,'unread');
 storeBook('meme', 'dog', 250, 'read');
 storeBook('hella', 'kitten', 500,'unread');
 displayBooks();
