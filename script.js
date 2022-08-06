@@ -45,6 +45,17 @@ function Books(title, author, pages, read) {
     this.read = read
 }
 
+Books.prototype.changeReadStatus = function() {
+    if (this.read == 'Read') {
+        this.read = 'Unread'
+    }
+
+    else {
+        this.read = 'Read';
+    }
+    displayBooks();
+}
+
 function storeBook(title, author, pages, read) {
     let tmpBook = new Books(title, author, pages, read);
     bookArray.push(tmpBook);
@@ -71,8 +82,11 @@ function displayBooks() {
         let readStatus = document.createElement('p');
         let removeBook = document.createElement('button');
         removeBook.setAttribute('id', childArray.length);
-        removeBook.textContent = 'Remove Book';
+        let changeRead = document.createElement('button');
+        changeRead.classList.add('change', 'read');
 
+        removeBook.textContent = 'Remove Book';
+        changeRead.textContent = 'Change Read Status';
         titleContainer.textContent = book.title;
         authorContainer.textContent = book.author;
         pagesContainer.textContent = book.pages;
@@ -82,8 +96,13 @@ function displayBooks() {
         bookDiv.appendChild(pagesContainer);
         bookDiv.appendChild(readStatus);
         bookDiv.appendChild(removeBook);
+        bookDiv.appendChild(changeRead);
         
         bookShelf[0].appendChild(bookDiv)
+
+        changeRead.addEventListener('click', function() {
+            book.changeReadStatus();
+        })
 
         removeBook.addEventListener('click', function() {
             this.parentElement.remove();
