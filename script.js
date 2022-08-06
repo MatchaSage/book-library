@@ -87,7 +87,7 @@ function displayBooks() {
 
         removeBook.addEventListener('click', function() {
             this.parentElement.remove();
-            bookArray.splice(this.id, 1)
+            bookArray.splice(this.id, 1);
         })
     })
 }
