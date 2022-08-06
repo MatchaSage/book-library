@@ -70,11 +70,7 @@ function displayBooks() {
         let pagesContainer = document.createElement('p');
         let readStatus = document.createElement('p');
         let removeBook = document.createElement('button');
-        
-        for (let i = 0; i < childArray.length; i++) {
-
-        }
-
+        removeBook.setAttribute('id', childArray.length);
         removeBook.textContent = 'Remove Book';
 
         titleContainer.textContent = book.title;
@@ -90,9 +86,8 @@ function displayBooks() {
         bookShelf[0].appendChild(bookDiv)
 
         removeBook.addEventListener('click', function() {
-            // this.parentElement.remove();
-            console.log(childArray.length);
-            
+            this.parentElement.remove();
+            bookArray.splice(this.id, 1)
         })
     })
 }
