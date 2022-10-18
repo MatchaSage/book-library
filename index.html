@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
     <title>Book Library</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="button form">
-        <button class="book button">New Book</button>
-        
-        <form action="" method="get" id="add book">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author">
-            <label for="pages">Pages</label>
-            <input type="text" id="pages" name="pages">
-            <input type="button" id="read" name="read" value="Read">
-            <input type="submit" value="Add Book">
-        </form>
+      <button class="book button">New Book</button>
+
+      <form action="" method="get" id="add book" novalidate>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required minlength="2" />
+        <span class="titleError" aria-live="polite"></span>
+
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" required minlength="2" />
+        <span class="authorError" aria-live="polite"></span>
+
+        <label for="pages">Pages</label>
+        <input type="text" id="pages" name="pages" required minlength="2" />
+        <span class="pagesError" aria-live="polite"></span>
+
+        <input type="button" id="read" name="read" value="Read" />
+        <input type="submit" value="Add Book" />
+      </form>
     </div>
-    <div class="book cards">
-        
-    </div>
-</body>
+    <div class="book cards"></div>
+  </body>
 </html>
